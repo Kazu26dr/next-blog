@@ -4,6 +4,8 @@ import { PortableText } from "@portabletext/react";
 import { TypedObject } from "@portabletext/types"; 
 import Image from "next/image";
 
+export const revalidate = 30; // revalidate at most 30second
+
 async function getData(slug: string) {
   const query = `
     *[_type == 'blog' && slug.current == '${slug}'] {
